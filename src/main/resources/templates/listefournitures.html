@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestion des fournitures de Bureaux</title>
+</head>
+<body>
+<h1>Notre première application Spring Boot</h1>
+FOURNITURES
+
+<table>
+  <tr>
+    <th>CATEGORIE</th>
+    <th>NOM</th>
+    <th>LOT</th>
+    <th>Qte Seuil</th>
+    <th>Date création</th>
+  </tr>
+  <tr th:each="fourniture : ${fournitures}">
+    <td th:text="${fourniture.categorie}">tata</td>
+    <td th:text="${fourniture.nom}">titi</td>
+    <td th:text="${fourniture.lot}">15</td>
+    <td th:text="${fourniture.quantiteSeuil}">15</td>
+    <td th:text="${fourniture.dateCreation}">tat</td>
+  </tr>
+</table>
+
+<p>
+  <a th:href="@{/}">Retourner 0  home</a>
+</p>
+</body>
+</html>

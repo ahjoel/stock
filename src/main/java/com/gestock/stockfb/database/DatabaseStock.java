@@ -1,5 +1,6 @@
 package com.gestock.stockfb.database;
 
+import com.gestock.stockfb.model.Commande;
 import com.gestock.stockfb.model.Fourniture;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.Optional;
 
 public final class DatabaseStock {
     private static List<Fourniture> fournitures;
+    private static List<Commande> commandes;
 
     //Singleton : Constructeur private
     private DatabaseStock(){
@@ -19,6 +21,13 @@ public final class DatabaseStock {
             fournitures = getListFournitureFromDatabase();
         }
         return fournitures;
+    }
+
+    public static List<Commande> getInstanceCommande() {
+        if (!Optional.ofNullable(commandes).isPresent()){
+            commandes = getListCommandeFromDatabase();
+        }
+        return commandes;
     }
 
     public static List<Fourniture> getListFournitureFromDatabase(){
@@ -44,5 +53,32 @@ public final class DatabaseStock {
         fournitures.add(fourniture9);
 
         return fournitures;
+    }
+
+    public static List<Commande> getListCommandeFromDatabase(){
+        var commande1 = Commande.builder().reference("CMD102023").qteFourniture(4).status("En cours").date("05-05-2023").build();
+        var commande2 = Commande.builder().reference("CMD112023").qteFourniture(5).status("En cours").date("05-05-2023").build();
+        var commande3 = Commande.builder().reference("CMD122023").qteFourniture(3).status("En cours").date("06-04-2023").build();
+        var commande4 = Commande.builder().reference("CMD132023").qteFourniture(11).status("Livrée").date("12-03-2023").build();
+        var commande5 = Commande.builder().reference("CMD142023").qteFourniture(7).status("En cours").date("15-04-2023").build();
+        var commande6 = Commande.builder().reference("CMD152023").qteFourniture(9).status("En cours").date("01-06-2023").build();
+        var commande7 = Commande.builder().reference("CMD162023").qteFourniture(2).status("En cours").date("28-05-2023").build();
+        var commande8 = Commande.builder().reference("CMD172023").qteFourniture(12).status("En cours").date("30-05-2023").build();
+        var commande9 = Commande.builder().reference("CMD182023").qteFourniture(6).status("En cours").date("11-02-2023").build();
+
+
+        List<Commande> commandes = new ArrayList();
+        commandes.add(commande1);
+        commandes.add(commande2);
+        commandes.add(commande3);
+        commandes.add(commande4);
+        commandes.add(commande5);
+        commandes.add(commande6);
+        commandes.add(commande7);
+        commandes.add(commande8);
+        commandes.add(commande9);
+
+
+        return commandes;
     }
 }

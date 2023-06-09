@@ -66,14 +66,14 @@
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item active">
+    <li class="nav-item">
       <a class="nav-link" th:href="@{/listefourniture}">
         <i class="fas fa-box"></i>
         <span>Fourniture</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    <li class="nav-item active">
       <a class="nav-link" th:href="@{/listecommande}">
         <i class="fas fa-list"></i>
         <span>Commande</span></a>
@@ -103,24 +103,6 @@
 
 
 
-    <!-- Nav Item - Utilities Collapse Menu -->
-    <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-            aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Utilities</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-            data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="utilities-color.html">Colors</a>
-                <a class="collapse-item" href="utilities-border.html">Borders</a>
-                <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                <a class="collapse-item" href="utilities-other.html">Other</a>
-            </div>
-        </div>
-    </li> -->
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -130,26 +112,6 @@
       Statistiques
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-            aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Login Screens:</h6>
-                <a class="collapse-item" href="login.html">Login</a>
-                <a class="collapse-item" href="register.html">Register</a>
-                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                <div class="collapse-divider"></div>
-                <h6 class="collapse-header">Other Pages:</h6>
-                <a class="collapse-item" href="404.html">404 Page</a>
-                <a class="collapse-item" href="blank.html">Blank Page</a>
-            </div>
-        </div>
-    </li> -->
 
     <!-- Nav Item -->
     <li class="nav-item">
@@ -428,7 +390,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 class="h3 mb-0 text-gray-800">Fourniture</h1>
+          <h1 class="h3 mb-0 text-gray-800">Commandes</h1>
           <a href="editFourniture.html" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                   class="fas fa-plus fa-sm text-white-50"></i> Ajouter</a>
         </div>
@@ -436,38 +398,35 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Liste Fournitures</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Liste Commandes</h6>
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
-                  <th>Catégorie</th>
-                  <th>Fourniture</th>
-                  <th>Unité/Base</th>
-                  <th>Seuil (Minimum)</th>
-                  <th>Date création</th>
+                  <th>Reference</th>
+                  <th>Qte Fourniture</th>
+                  <th>Statut</th>
+                  <th>Date</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
-                  <th>Catégorie</th>
-                  <th>Fourniture</th>
-                  <th>Unité/Base</th>
-                  <th>Seuil (Minimum)</th>
-                  <th>Date création</th>
+                  <th>Reference</th>
+                  <th>Qte Fourniture</th>
+                  <th>Statut</th>
+                  <th>Date</th>
                   <th>Actions</th>
                 </tr>
                 </tfoot>
                 <tbody>
-                <tr th:each="fourniture : ${fournitures}">
-                  <td th:text="${fourniture.categorie}">tata</td>
-                  <td th:text="${fourniture.nom}">titi</td>
-                  <td th:text="${fourniture.lot}">15</td>
-                  <td th:text="${fourniture.quantiteSeuil}">15</td>
-                  <td th:text="${fourniture.dateCreation}">tat</td>
+                <tr th:each="commande : ${commandes}">
+                  <td th:text="${commande.reference}">tata</td>
+                  <td th:text="${commande.qteFourniture}">titi</td>
+                  <td th:text="${commande.status}">15</td>
+                  <td th:text="${commande.date}">15</td>
                   <td>
                     <a href="#" class="btn btn-info btn-circle btn-sm">
                       <i class="fas fa-pen"></i>

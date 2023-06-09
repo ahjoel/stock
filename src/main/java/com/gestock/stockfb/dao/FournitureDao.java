@@ -10,7 +10,7 @@ import java.util.List;
 public class FournitureDao {
 
     public List<Fourniture> getAll(){
-        DatabaseStock.getInstance().stream().forEach(System.out::println);
+        //DatabaseStock.getInstance().stream().forEach(System.out::println);
         return DatabaseStock.getInstance();
     }
 

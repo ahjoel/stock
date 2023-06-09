@@ -1,6 +1,8 @@
 package com.gestock.stockfb.service;
 
+import com.gestock.stockfb.dao.CommandeDao;
 import com.gestock.stockfb.dao.FournitureDao;
+import com.gestock.stockfb.model.Commande;
 import com.gestock.stockfb.model.Fourniture;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -9,12 +11,11 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-public class FournitureService {
+public class CommandeService {
+    private final CommandeDao commandeDao;
 
-    private final FournitureDao fournitureDao;
-
-    public List<Fourniture> listeDesFournitures(){
-        return fournitureDao.getAll();
+    public List<Commande> listeDesCommandes(){
+        return commandeDao.getAll();
     }
 
 }

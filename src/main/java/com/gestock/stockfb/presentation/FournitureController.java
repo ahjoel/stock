@@ -12,6 +12,12 @@ public class FournitureController {
     @Autowired
     private FournitureService fournitureService;
 
+    @GetMapping("/accueil")
+    public String accueil(Model model){
+
+        return "accueil";
+    }
+
     @GetMapping("/listefourniture")
     public String listeFournitures(Model model){
         var fournitures = fournitureService.listeDesFournitures();
